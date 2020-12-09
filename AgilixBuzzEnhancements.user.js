@@ -3,7 +3,7 @@
 // @namespace   Violentmonkey Scripts
 // @match       https://*.agilixbuzz.com/*
 // @grant       none
-// @version     0.0.1
+// @version     0.0.3
 // @author      cool_mineman
 // @homepage    https://github.com/CoolMineman/AgilixBuzzEnhancements/tree/master/
 // @homepageURL https://github.com/CoolMineman/AgilixBuzzEnhancements/tree/master/
@@ -36,7 +36,7 @@ if (window.location.href.includes("agilixbuzz.com/login") || window.location.hre
 
 // Bypass Strange Login Error
 if (window.location.href.includes("https://api.agilixbuzz.com/SSOProcess")) {
-    history.back()
+    history.go(-3);
 }
 
 // Bypass Session Timeout
@@ -63,4 +63,4 @@ function reauth() {
     });
     setTimeout(reauth, 10000)
 }
-reauth()
+reauth();
